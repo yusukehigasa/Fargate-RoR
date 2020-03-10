@@ -12,9 +12,8 @@ phases:
   build:
     commands:
       - echo Building the Docker image.....
-      - docker build -t my_first_server .
+      - docker-compose -f docker-compose.yml build
       - docker tag my_first_server:latest 343700722017.dkr.ecr.ap-northeast-1.amazonaws.com/my_first_server:latest
-      - docker build -t my_first_web .
       - docker tag my_first_web:latest 343700722017.dkr.ecr.ap-northeast-1.amazonaws.com/my_first_web:latest
   post_build:
     commands:
