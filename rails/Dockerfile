@@ -43,11 +43,10 @@ RUN yarn install
 WORKDIR /webapp
 ADD . /webapp
 
-#Added 20.03.27
-# RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/sockets
 
-# # Expose volumes to frontend
-# VOLUME /webapp/public
-# VOLUME /webapp/tmp
+# Expose volumes to frontend
+VOLUME /webapp/public
+VOLUME /webapp/tmp
 
-# CMD bundle exec puma
+CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb", "-E", "production"]

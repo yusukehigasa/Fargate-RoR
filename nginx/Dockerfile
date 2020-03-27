@@ -9,6 +9,5 @@ ADD nginx.conf /etc/nginx/conf.d/webapp.conf
 # Run Nginx after build
 CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
 
-#Added 20.03.27
-# # Mount static files
-# ADD public /webapp/public
+# Mount static files
+#ADD public /webapp/public
