@@ -49,4 +49,4 @@ RUN mkdir -p tmp/sockets
 VOLUME /webapp/public
 VOLUME /webapp/tmp
 
-CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb", "-E", "production"]
+CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
