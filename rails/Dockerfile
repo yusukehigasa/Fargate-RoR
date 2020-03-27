@@ -44,6 +44,7 @@ WORKDIR /webapp
 ADD . /webapp
 
 RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pids
 
 # Expose volumes to frontend
 VOLUME /webapp/public
