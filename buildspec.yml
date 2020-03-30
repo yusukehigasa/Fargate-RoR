@@ -14,6 +14,7 @@ phases:
       - echo Building the Docker images...
       - docker-compose build
       - docker-compose run --rm app rails assets:precompile
+      - docker-compose run --rm app rails db:migrate DB_DATABASE=$DB_DATABASE DB_HOST=$DB_HOST DB_USERNAME=$DB_USERNAME DB_PASSWORD=$DB_PASSWORD
       - docker tag $SERVER_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$SERVER_REPO_NAME:$IMAGE_TAG
       - docker tag $WEB_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$WEB_REPO_NAME:$IMAGE_TAG
   post_build:
