@@ -53,4 +53,4 @@ RUN mkdir -p tmp/pids
 VOLUME /webapp/public
 VOLUME /webapp/tmp
 
-#CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
+CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
