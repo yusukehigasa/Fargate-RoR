@@ -54,3 +54,4 @@ VOLUME /webapp/public
 VOLUME /webapp/tmp
 
 #CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
+CMD ash -c "rm -f /webapp/tmp/pids/server.pid && bundle exec puma -C /webapp/config/puma.rb"
