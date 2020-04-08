@@ -33,12 +33,6 @@ RUN bundle install
 # For install yarn packages
 RUN yarn install
 
-# For bundle assets on RoR
-#RUN bundle exec rake assets:precompile
-
-# For DB migrate
-#RUN bundle exec rake db:migrate
-
 # Remove packages as dependencies
 #RUN apk del build-dependencies
 
@@ -50,7 +44,7 @@ RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
 # Expose volumes to frontend
-VOLUME /webapp/public
+#VOLUME /webapp/public
 VOLUME /webapp/tmp
 
 #CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
