@@ -21,8 +21,6 @@
 
 /rails/.ruby-version
 /rails/.sass-lint.yml
-/rails/public/assets
-/rails/public/packs
 /rails/public/packs-test
 /rails/node_modules
 /rails/yarn-error.log
