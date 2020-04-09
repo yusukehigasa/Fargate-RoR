@@ -22,7 +22,7 @@ services:
     build:
       context: rails
     image: my_first_web
-    command: ash -c "bundle exec rails assets:precompile && rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    command: ash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - ./rails:/webapp
     links:
