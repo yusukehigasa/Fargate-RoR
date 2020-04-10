@@ -20,6 +20,7 @@ RUN apk upgrade --no-cache && \
       yaml-dev \
       zlib-dev
 
+# For Bug Fix by RoR 6.x
 RUN gem install sassc -- --disable-march-tune-native
 
 # For 'bundle install' not run every time
@@ -45,7 +46,8 @@ ADD . /webapp
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+# For assets compile
+RUN bundle exec rails assets:precompile
 
 # Expose volumes to frontend
 VOLUME /webapp/public
