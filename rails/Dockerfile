@@ -20,6 +20,8 @@ RUN apk upgrade --no-cache && \
       yaml-dev \
       zlib-dev
 
+RUN gem install sassc -- --disable-march-tune-native
+
 # For 'bundle install' not run every time
 WORKDIR /tmp
 
