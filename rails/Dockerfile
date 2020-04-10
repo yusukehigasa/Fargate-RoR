@@ -45,8 +45,10 @@ ADD . /webapp
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
+RUN bundle exec rails assets:precompile RAILS_ENV=production
+
 # Expose volumes to frontend
-#VOLUME /webapp/public
+VOLUME /webapp/public
 VOLUME /webapp/tmp
 
 #CMD ["bundle", "exec", "puma", "-C", "/webapp/config/puma.rb"]
