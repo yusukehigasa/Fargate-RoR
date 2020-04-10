@@ -81,5 +81,13 @@ group :test do
   gem 'launchy', '~> 2.4.2'
 end
 
+group :production do
+  # HerokuのSprocket対応のため
+  gem 'sprockets'
+  gem 'sprockets-rails'
+  # Herokuのときに必要なおまじない的なgem
+  gem 'rails_12factor'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
