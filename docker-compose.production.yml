@@ -32,7 +32,6 @@ services:
   web:
     build:
       context: ./nginx/production
-      dockerfile: Dockerfile
     image: my_first_server
     ports:
       - 80:80
