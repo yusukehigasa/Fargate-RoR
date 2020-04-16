@@ -1,2 +1,12 @@
 <h1><%= @title %></h1>
-<p>更新： Ver.1.0.0</p>
+<p>更新： Ver.1.0.1</p>
+
+<h2>記事一覧</h2>
+<% if @articles.present? %>
+  <% @articles.each do |article| %>
+    <h4><%= article.title %></h4>
+    <p><%= article.body %></p>
+  <% end %>
+<% else %>
+  <p>記事が存在しません。</p>
+<% end %>
