@@ -15,5 +15,12 @@ module Webapp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Redis の初期設定
+    if Rails.env.development?
+      config.cache_store = :redis_store, ENV['REDIS_FULL_URL'], { expires_in: 90.minutes }
+    else
+      config.cache_store = :redis_store, ENV['REDIS_FULL_URL'], { expires_in: 90.minutes }
+    end
   end
 end
