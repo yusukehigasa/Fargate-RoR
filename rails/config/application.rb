@@ -17,6 +17,7 @@ module Webapp
     # the framework and any gems in your application.
 
     # Redis の初期設定
+    # NOTE: 詳細は session_store.rb を参照
     if Rails.env.development?
       config.cache_store = :redis_store, ENV['REDIS_FULL_URL'], { expires_in: 90.minutes }
     else
