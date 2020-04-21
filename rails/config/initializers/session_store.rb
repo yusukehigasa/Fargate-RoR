@@ -8,6 +8,6 @@ Webapp::Application.config.session_store :redis_store, {
       namespace: ENV['REDIS_NAMESPACE']
     },
   ],
-  expire_after: ENV['REDIS_EXPIRE'],
+  expire_after: 1.week,
   key: '_#{Rails.application.class.parent_name.downcase}_session'
 }
