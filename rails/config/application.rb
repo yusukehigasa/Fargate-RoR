@@ -16,6 +16,9 @@ module Webapp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # RedisStoreを有効にするためのオプション
+    config.active_record.cache_versioning = true
+
     # Redis の初期設定
     # NOTE: 詳細は session_store.rb を参照
     if Rails.env.development?

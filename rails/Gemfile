@@ -26,7 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # セッション管理にRedisを使うため
 gem 'redis'
-gem 'redis-actionpack'
+gem 'redis-rails'
 
 # 論理削除を使うため
 gem 'paranoia'
